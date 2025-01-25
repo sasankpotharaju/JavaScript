@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     function mainfunction(callback){
+    //     document.write("Executing main function ");
+    //     callback()
+    //     //here we call the callback function
+    // }
+    // function callbackFunction(){ 
+    // document.write("callbackfunction executed")
+    // }
+    //     mainfunction(callbackFunction);
+
+    // function greet(name ,callback){
+    //     document.write("hello " +name);
+    //     callback();
+    // //executes the call back function after greeting
+    // }
+    //     function goodbye(){
+    //     document.write("Goodbye!")
+    // }
+    //     greet("Hari " ,goodbye);
+
+
+    // function greet(name ,callback){
+    //     document.write("hello " +name);
+    //     callback();//executes the call back function after greeting
+    //     }
+    // greet("hari " , function(){
+    //     document.write("goodbye!")
+    // })
+
+
+//     function fetchData(callback) {
+//     document.write("Fetching data...<br>");
+//     setTimeout(function() {
+//         document.write("Data fetched<br>");
+//         callback();
+//     }, 2000);
+// }
+
+// function processData() {
+//     document.write("Processing the fetched data...<br>");
+// }
+
+// fetchData(processData);
+
+
+function registerUser(username, email, callback) {
+  document.write("Registering user: " + username + "<br>");
+  setTimeout(function () {
+    document.write("User " + username + " registered successfully<br>");
+    callback(email);
+  }, 2000);
+}
+
+function sendWelcomeEmail(email) {
+  document.write("Sending welcome email to: " + email + "<br>");
+}
+
+// Call the function with corrected arguments
+registerUser("hari", "hari123@gmail.com", sendWelcomeEmail);
+
+//anonymous function as function
+    </script>
+</body>
+</html>
