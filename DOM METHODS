@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div id="a">
+            <h1>ravi</h1>
+            <h1>ram</h1>
+        </div>
+        <div id="b">
+            <h2>ravan</h2>
+            <h2 >raju</h2>
+        </div>
+    
+        <script>
+            // let q=document.createElement('h1')
+            // q.textContent="hari"
+            // //let n=document.createElement("h2")
+            // //n.nextContent="Raju"
+    
+    
+            // let p=document.getElementById("a")
+           
+            // let l=document.getElementById('r')
+            // p.insertBefore(q ,l)
+            // document.write(p)
+
+            // let b=document.getElementById("b")
+            // b.remove()
+
+            // let n=document.getElementById("a")
+            // let l=document.getElementById("re")
+
+            // document.write(n)
+            // n.removeChild(l)
+
+            let n=document.createElement("h1")
+            n.innerText="version IT"
+            let l=document.getElementById("a")
+            //replace all the children with version IT
+            l.replaceChildren(n)
+            document.write(n)
+
+            
+        </script>
+</body>
+</html>
