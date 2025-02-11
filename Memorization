@@ -1,0 +1,42 @@
+import React, { useState, useMemo } from 'react';
+
+const products = [
+  { id: 1082, name: 'Laptop', category: 'Electronics' },
+  { id: 3843, name: 'Mobile', category: 'Electronics' },
+  { id: 9843, name: 'Shoes', category: 'Footwear' },
+  { id: 2398, name: 'Shirt', category: 'Clothing' },
+  { id: 9832, name: 'Watch', category: 'Accessories' }
+];
+
+function ProductSearch() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Function to filter products based on search query
+  const filterProducts = (query) => {
+    return products.filter(product =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
+  // Use memo to filter the products
+  const filteredProducts = useMemo(() => filterProducts(searchQuery), [searchQuery]);
+
+  return (
+    <div>
+      <h1>Product Search</h1>
+      <input
+        type='text'
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder='Search for a product...'
+      />
+      <ul>
+        {filteredProducts.map(product => (
+          <li key={product.id}>{product.name} - {product.category}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default ProductSearch;
