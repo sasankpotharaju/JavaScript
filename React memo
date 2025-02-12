@@ -1,0 +1,42 @@
+React memo:-
+--it is a HOC(High Order Component) is not a Reacr hook.
+--it will stop unnecessary -rendering of functional components of its props.
+--it will improve the performance of the functional components.
+APP.js:-
+import {useState}from 'react'
+
+import childA from "./ChildA"
+import childB from "./ChildB"
+const Parent =()=>{
+  const[count, setCount]=usestate(0);
+  const increment =()=>{
+    setCount(c=>c+1);
+  };
+  return(
+    <div> 
+      <childA/>
+      <childB count={count} increment={increment}/>
+    </div>
+  )
+};
+export default Parent;
+ChildA.js:-
+ const ChildA=()=>{
+    console.log("Child A rendered");
+    return <h2> This is ChildA</h2>
+};
+export default ChildA;
+
+ChildB.js:-
+const ChildB=({count , increment})=>{
+    console.log("Child B rendered");
+    return(
+        <div>
+    <h2>Count:{count}</h2>
+    <button onClick={increment}>Increment</button>
+    </div>
+    );
+};
+export default ChildB;
+
+
