@@ -1,0 +1,55 @@
+import React,{useReducer} from 'react';
+ function appleReducer(state=3,action){
+   switch(action.type){
+     case'ADD_APPLE':
+     return state+1;
+
+     case 'EAT_APPLE':
+       return state-1;
+
+       default:
+         return state;
+   }
+ }
+ function App(){
+   const[state,dispatch]=useReducer(appleReducer,3)
+   return(
+     <div style={{padding:'20px'}}>
+         <h1>Apple Counter</h1>
+         <p>Number of apples:{state}</p>
+         <button onClick={()=>dispatch({type:'ADD_APPLE'})}>ADD_APPLE</button>
+         <button onClick={()=>dispatch({type:'ADD_APPLE'})}>EAT_APPLE</button>
+     </div>
+   )
+ }
+ export default App;
+/*(import React,{useReducer} from 'react';
+
+//reducer funtion to track no of apples
+function appleReduce(state=3,action){
+  switch(action.type){
+    case 'ADD_APPLE':
+      return state+1;
+
+      case'EAT_APPLE':
+      return state-1;
+
+      default:
+        return state;
+  }
+}
+
+function App(){
+  const [state, dispatch]=useReducer(appleReduce)
+  return(
+    <div style={{padding:'20px'}}>
+      <h1 style={{color:"blue", textAlign:'center'}}>Apple Counter</h1>
+      <p style={{color:"blue",textAlign:"center"}}> Number of apples:{state}</p>
+
+      <button onClick= {()=>dispatch({type:'ADD_APPLE'})} style={{color:'yellowgreen',textAlign:"center"}}>ADD APPLE</button>
+      <button onClick= {()=>dispatch({type:'EAT_APPLE'})}>EAT APPLE</button>
+    </div>
+
+  )
+}
+export default App;*/
