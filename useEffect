@@ -1,0 +1,52 @@
+import React, {useState, useEffect, useRef} from 'react';
+
+function CounterWithPrev(){
+    const [count, setCount] = useState(0);
+    const prevCount = useRef();
+    //create a ref to store the previous value
+
+    useEffect(()=>{
+        prevCount.current = count;
+    }, [count])
+
+    return(
+        <div>
+            <p>Current Counter: {count}</p>
+            <p>prevCount: {prevCount.current}</p>
+
+            <button onClick={()=>setCount(count+1)}>Increment</button>
+        </div>
+    )
+}
+export default CounterWithPrev;
+
+/*import React, { useReducer } from 'react';
+import './App.css';
+
+function appleReducer(state = 3, action) {
+  switch (action.type) {
+    case 'ADD_APPLE':
+      return state + 1;
+    case 'EAT_APPLE':
+      return state > 0 ? state - 1 : state;
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(appleReducer, 3);
+  return (
+    <div className="app-container">
+      <h1>Apple Counter</h1>
+      <p>NUMBER OF APPLES: {state}</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Apple" width="100" height="100" />
+      <div>
+        <button className='a' onClick={() => dispatch({ type: 'ADD_APPLE' })}> ADD APPLE</button>
+        <button className='b' onClick={() => dispatch({ type: 'EAT_APPLE' })}> EAT APPLE</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;*/
