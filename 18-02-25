@@ -1,0 +1,53 @@
+App.css:-
+/* App.css */
+.app {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 24px;
+}
+
+h2 {
+  color: #333;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 20px;
+}
+
+input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+App.js:-
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [key, setKey] = useState("");
+
+  const handleKeyDown = (event) => {
+    setKey(event.key);
+  };
+
+  return (
+    <div className="app">
+      <h1>Welcome to Nandu IT Solutions</h1>
+      {key && <h2>Pressed Key: {key}</h2>}
+      <input type="text" onKeyDown={handleKeyDown} placeholder="Press here" />
+    </div>
+  );
+}
+
+export default App;
