@@ -1,0 +1,37 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 2211cs010175       |
+| ecomdb             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| students           |
+| sys                |
++--------------------+
+mysql> insert into student values('Bannu','175','Bannu@email.com','9493915522','CSE');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values('Pavan','104','Pavan@email.com','9876543210','CSE');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into student values('Aditya','136','Aditya@email.com','1234567890','AIML');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into student values('Hari','166','Hari@email.com','9996669990','CS');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into student values('Dhanush','137','Dhanush@email.com','666622226','AIML');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student;
++---------+---------+-------------------+------------+--------+
+| Name    | Roll_no | email             | phone_no   | branch |
++---------+---------+-------------------+------------+--------+
+| Bannu   |     175 | Bannu@email.com   | 9493915522 | CSE    |
+| Pavan   |     104 | Pavan@email.com   | 9876543210 | CSE    |
+| Aditya  |     136 | Aditya@email.com  | 1234567890 | AIML   |
+| Hari    |     166 | Hari@email.com    | 9996669990 | CS     |
+| Dhanush |     137 | Dhanush@email.com |  666622226 | AIML   |
++---------+---------+-------------------+------------+--------+
